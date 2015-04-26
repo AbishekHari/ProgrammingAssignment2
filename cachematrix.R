@@ -1,7 +1,7 @@
 ## This source file contains 3 functions
 ## 1. makeCacheMatrix - creates a special matrix object to cache its inverse
 ## 2. cacheSolve - will return the cached matrix if exists or builds an inverse otherwise
-## 3. validate   - will stop processing if the incoming matrix is not a square matrix
+## 3. isMatrixInvertible   - will stop processing if the incoming matrix is not a square matrix
 
 ## makeCacheMatrix creates a special matrix object that can cache its inverse
 ## input:  matrix
@@ -12,8 +12,8 @@
 ## 4. getInverse - get the inverse Matrix
 makeCacheMatrix <- function(x = matrix()) {
 
-    # validates if the matrix can be inversed or not
-    validate(x)
+    # find out if the matrix can be inversed or not
+    isMatrixInvertible(x)
     
     ## initialize inpMatrix & invMatrix member variables
     inpMatrix <- x                   ## inpMatrix holds the actual matrix
@@ -80,7 +80,7 @@ cacheSolve <- function(x, ...) {
 
 
 ## stops the execution if the incoming function cannot be inversed
-validate <- function(x)
+isMatrixInvertible <- function(x)
 {
     ## stop if number of rows doesnt match with number of columns, i.e its not a square matrix
     if (nrow(x) != ncol(x))
