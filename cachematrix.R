@@ -82,7 +82,7 @@ cacheSolve <- function(x, ...) {
 ## stops the execution if the incoming function cannot be inversed
 validate <- function(x)
 {
-    ## stop if number of rows doesnt match with number of columns
+    ## stop if number of rows doesnt match with number of columns, i.e its not a square matrix
     if (nrow(x) != ncol(x))
         stop("matrix is not inversible")
 }
