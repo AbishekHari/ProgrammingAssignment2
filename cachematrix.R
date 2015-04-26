@@ -83,10 +83,10 @@ isMatrixInvertible <- function(x)
 {
     ## stop if number of rows doesnt match with number of columns, i.e its not a square matrix
     if (nrow(x) != ncol(x))
-        stop("matrix is not invertible as the matrix it is a Square Matrix")
+        stop("matrix is not invertible as it is a Square Matrix")
     
     ## if the determinant of the matrix is 0, then it is not invertible
     if (det(x) == 0)
-        stop("matrix is not invertible as the matrix it is a singular matrix")
+        stop("matrix is not invertible as it is a singular matrix")
 }
 
