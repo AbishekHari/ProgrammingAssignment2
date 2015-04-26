@@ -61,7 +61,6 @@ cacheSolve <- function(x, ...) {
     ## if the inverse in cached matrix is not null return inverse
     if (!is.null(inverse))
     {
-        message("getting cached inverse of the input matrix")
         return(inverse)
     }
     
